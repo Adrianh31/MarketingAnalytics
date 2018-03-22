@@ -1,2 +1,2 @@
-#my first r file
+#my first R file
 man
