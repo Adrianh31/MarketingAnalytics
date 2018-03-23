@@ -22,14 +22,14 @@ head(df1)
 #Model
 fit1 = lm(Y ~ X, data=df1)
 fit1
-summary(fit1)
+summary(fit1)   #p-value < 0.05 so model is significant, otherwise insignificant
 names(fit1)
 
 
 # Predictions
 (Y = 0.9645 + 1.6699 * 4)  # for X=4
 fitted(fit1)
-
+cbind(df1, fitted(fit1))
 range(X)
 new1 = data.frame(X=c(1,2,3,4,5))
 predict(fit1, newdata= new1)
@@ -97,3 +97,4 @@ car::outlierTest(fit1)
 df1[14,]
 
 car::outlierTest(lm(Y ~ X, data=df1[-14,]))
+
